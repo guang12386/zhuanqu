@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body onselectstart="return false;" oncontextmenu="alert('请尊重本网站版权！');return false;" onkeydown="if(event.keyCode==27) return false;">
+<script type="text/javascript">
+document.onmousedown = click; //绑定禁用鼠标右键事件
+document.onkeydown = ctrl_key; //绑定禁用键盘事件
+function click() {
+if (event.button == 2) //单击的鼠标键为右键
+{
+alert('宝宝你要干嘛！');
+return false;
+}
+}
+function ctrl_key() {
+if (event.keyCode == 17) { //禁用CTRL+S 保存网页代码
+window.alert("宝宝你要干嘛！");
+return false;
+}
+if (event.keyCode == 123) { //禁用F12查看源代码
+alert('宝宝你要干嘛！');
+return false;
+}
+}
+</script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <title>Vinnet王者跨区</title>
+</head>
+<style lang="scss">
+body {
+  background-image: url('bj.png');
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+
+
+  #app {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 45%; /* 设置顶部外边距 */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  input[type="radio"] {
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%; /* 设置按钮宽度 */
+    height: 40px; /* 设置按钮高度 */
+    padding: 10px; /* 设置按钮圆角 */
+    margin-top: 10px; /* 设置顶部外边距 */
+    margin-bottom: 10px; /* 设置底部外边距 */
+    background-color: rgb(40,106,254,0.6);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+  .btn-wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column; /* 将按钮垂直排列 */
+    align-items: center; /* 水平居中 */
+  }
+  .tips{
+    
+    width: 100%;
+    text-align: left;
+  }
+  .tips div:first-child{
+    margin: 8px 0;
+  }
+.title{
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-right: 75px; /* 向左移动 */
+}
+.title img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.kiss{
+    width: 50%;
+    text-align: left;
+  }
+  .kiss div:first-child{
+    margin: 8px 0;
+}
+
+</style>
+
+
+<body>
+  <div id="app">
+    <div class="title">
+      <img src="logo.png" alt="">
+      <span>Vinnet跨区</span>
+      </div>
+
+    <div  class="tips" >电报频道@VinnetTQ
+      <div>请用浏览器打开，不支持微信QQ直接打开 </div> 
+      <div>创建房间自动生成房间号，无需输入</div>
+    </div>
+    <input v-model="roomNumber" type="text" placeholder="加入房间请输入房间号,创建房间无需输入">
+    <div class="btn-wrap" style="display: flex; width: 100%;">
+      <button class="createRoom" @click="createRoom">创建房间</button>
+      <button class="jrRoom" @click="jrRoom">加入房间</button>
+    </div>
+  </div>
+<script>
+(function(_0xb28193,_0x29df6d){function _0x5b2815(_0x4f47b9,_0xaee95a,_0xbaca92,_0x456a31,_0x15bd14){return _0x2683(_0x456a31-0x1ab,_0x15bd14);}function _0x3ec012(_0x5809c0,_0x54cf62,_0x1eff59,_0x3b326f,_0x448bee){return _0x2683(_0x3b326f-0x2e7,_0x1eff59);}function _0x394730(_0x567c5a,_0x33f730,_0x4d6319,_0x37fe76,_0x54ba2a){return _0x2683(_0x37fe76- -0x2c4,_0x567c5a);}const _0x1656ee=_0xb28193();function _0x325983(_0x3eecba,_0x17aa40,_0x2aca19,_0x286aa5,_0x4e6ab0){return _0x2683(_0x2aca19-0xc8,_0x17aa40);}function _0x40b426(_0x4b6d70,_0x517a7d,_0x19314d,_0x4a3bd9,_0x1a53df){return _0x2683(_0x517a7d-0x45,_0x4b6d70);}while(!![]){try{const _0x43c96d=-parseInt(_0x325983(0xe3,0xdd,0xd5,0xe7,0xc5))/0x1*(-parseInt(_0x325983(0xc2,0xcf,0xd4,0xe1,0xd4))/0x2)+parseInt(_0x40b426(0x65,0x61,0x56,0x52,0x55))/0x3+-parseInt(_0x40b426(0x52,0x48,0x46,0x38,0x58))/0x4*(-parseInt(_0x3ec012(0x2e6,0x2f4,0x2ea,0x2ec,0x2dc))/0x5)+parseInt(_0x325983(0xe0,0xe6,0xe2,0xee,0xda))/0x6+parseInt(_0x5b2815(0x1c8,0x1a7,0x1bd,0x1b6,0x1b1))/0x7+parseInt(_0x394730(-0x2a8,-0x2b6,-0x2be,-0x2b3,-0x2be))/0x8+parseInt(_0x394730(-0x2a8,-0x2b9,-0x2b1,-0x2b6,-0x2a9))/0x9*(-parseInt(_0x3ec012(0x309,0x310,0x30d,0x309,0x30c))/0xa);if(_0x43c96d===_0x29df6d){break;}else{_0x1656ee["\u0070\u0075\u0073\u0068"](_0x1656ee["\u0073\u0068\u0069\u0066\u0074"]());}}catch(_0x12b0a4){_0x1656ee["\u0070\u0075\u0073\u0068"](_0x1656ee["\u0073\u0068\u0069\u0066\u0074"]());}}})(_0x2e58,0x61663);function _0x2683(_0x4d7296,_0x2e586e){const _0x268390=_0x2e58();_0x2683=function(_0x4964ea,_0x2bb5cf){_0x4964ea=_0x4964ea-0x0;let _0xcf80ce=_0x268390[_0x4964ea];return _0xcf80ce;};return _0x2683(_0x4d7296,_0x2e586e);}function _0x27784d(_0x42203d,_0x52dbcf,_0x2e6e04,_0x2adfce,_0x3b7955){return _0x2683(_0x52dbcf-0x2dd,_0x3b7955);}new Vue({"\u0065\u006c":_0x27784d(0x2e3,0x2e3,0x2ed,0x2f4,0x2de),"\u0064\u0061\u0074\u0061":{"\u0072\u006f\u006f\u006d\u004e\u0075\u006d\u0062\u0065\u0072":""},"\u006d\u0065\u0074\u0068\u006f\u0064\u0073":{async"\u0063\u0072\u0065\u0061\u0074\u0065\u0052\u006f\u006f\u006d"(){var _0x26f016;const _0x23229f="php.ipa".split("").reverse().join("");_0x26f016=0x7;const _0x12eb58=new URLSearchParams();_0x12eb58["\u0061\u0070\u0070\u0065\u006e\u0064"]('type',0x728c9^0x728c8);fetch(_0x23229f,{'method':'POST',"\u0068\u0065\u0061\u0064\u0065\u0072\u0073":{"\u0043\u006f\u006e\u0074\u0065\u006e\u0074\u002d\u0054\u0079\u0070\u0065":'application/x-www-form-urlencoded'},"\u0062\u006f\u0064\u0079":_0x12eb58})["\u0074\u0068\u0065\u006e"](_0x55e610=>_0x55e610["\u006a\u0073\u006f\u006e"]())['then'](async _0x4729f0=>{if("kcRPb".split("").reverse().join("")==="kcRPb".split("").reverse().join("")){if(_0x4729f0['code']===(0xe78c4^0xe780c)){if("oHBBS".split("").reverse().join("")!=="oHBBS".split("").reverse().join("")){_0x16badb['location']["\u0068\u0072\u0065\u0066"]=_0x2099b3["\u006d\u0073\u0067"];}else{this['roomNumber']=_0x4729f0['fjh'];const _0x46c8c2="\u5427\u53CB\u597D\u4F60\u7ED9\u53D1\u53F7\u95F4\u623F\u5236\u590D\u9875\u7F51\u56DE\u8FD4\u540E\u8005\u738B\u5F00\u6253\uFF0C\u529F\u6210\u5EFA\u521B\u7ECF\u5DF2\u95F4\u623F".split("").reverse().join("");var _0x5ac235;const _0x2b6464=confirm(_0x46c8c2+"\uFF1F\u8005\u738B\u5F00\u6253 ".split("").reverse().join(""));_0x5ac235=0x2+0x7;if(_0x2b6464){window['location']['href']=_0x4729f0["\u006d\u0073\u0067"];}}}else{alert("\u521b\u5efa\u623f\u95f4\u5931\u8d25");}}else{_0x51d5d0('创建房间失败');}})['catch'](_0xf3727=>{if("kxmEC".split("").reverse().join("")==="kxmEC".split("").reverse().join("")){console['error'](_0xf3727);alert("\u8D25\u5931\u95F4\u623F\u5EFA\u521B".split("").reverse().join(""));}else{if(_0xba914["\u0063\u006f\u0064\u0065"]===(0xe78c4^0xe780c)){this['roomNumber']=_0x27293f["\u0066\u006a\u0068"];const _0xf247b2="\u5427\u53CB\u597D\u4F60\u7ED9\u53D1\u53F7\u95F4\u623F\u5236\u590D\u9875\u7F51\u56DE\u8FD4\u540E\u8005\u738B\u5F00\u6253\uFF0C\u529F\u6210\u5EFA\u521B\u7ECF\u5DF2\u95F4\u623F".split("").reverse().join("");var _0x53e903;const _0x516b85=_0x194726(_0xf247b2+'\x20打开王者？');_0x53e903=0x2+0x7;if(_0x516b85){_0x41e7d0['location']["\u0068\u0072\u0065\u0066"]=_0x4f9ace['msg'];}}else{_0x34436f("\u521b\u5efa\u623f\u95f4\u5931\u8d25");}}});},"\u006a\u0072\u0052\u006f\u006f\u006d"(){function _0x45d210(_0x468d4c,_0x499081,_0x380818,_0x36561d,_0x10d48c){return _0x2683(_0x468d4c- -0x2e,_0x10d48c);}function _0x3bbb13(_0x2c22a6,_0x2e0830,_0xfc1e29,_0x3516c1,_0x118b1e){return _0x2683(_0x3516c1-0x159,_0x2c22a6);}const _0x3a0a1e=_0xb0bf0d(0x2f8,0x2fd,0x307,0x2f8,0x308);function _0x3b944e(_0x3411ea,_0x148b2b,_0x5b7f30,_0x26258d,_0x154f80){return _0x2683(_0x154f80-0x362,_0x26258d);}const _0x29e2d9=new URLSearchParams();_0x29e2d9["\u0061\u0070\u0070\u0065\u006e\u0064"](_0x3b944e(0x380,0x371,0x389,0x37a,0x37f),this['roomNumber']);function _0xb0bf0d(_0x3729b4,_0x5274c2,_0x1c6f0f,_0x5f23c3,_0x3c830c){return _0x2683(_0x3729b4-0x2d4,_0x1c6f0f);}function _0x586c54(_0x30e4f0,_0x26b249,_0x13c849,_0x2d37ad,_0x379774){return _0x2683(_0x13c849-0x117,_0x2d37ad);}_0x29e2d9["\u0061\u0070\u0070\u0065\u006e\u0064"](_0x3bbb13(0x170,0x16e,0x150,0x160,0x156),0x1f9a3^0x1f9a1);fetch(_0x3a0a1e,{'method':_0x3b944e(0x385,0x36c,0x36b,0x368,0x376),'headers':{"\u0043\u006f\u006e\u0074\u0065\u006e\u0074\u002d\u0054\u0079\u0070\u0065":_0x3bbb13(0x152,0x15a,0x164,0x15b,0x164)},"\u0062\u006f\u0064\u0079":_0x29e2d9})['then'](_0x598a28=>_0x598a28["\u006a\u0073\u006f\u006e"]())["\u0074\u0068\u0065\u006e"](_0x2e91e6=>{function _0x586189(_0x497231,_0x5b7ed3,_0x9a466e,_0x145de6,_0x79748c){return _0x2683(_0x79748c- -0x27d,_0x9a466e);}function _0x411386(_0x130f17,_0x210cb1,_0x576309,_0x5a29a7,_0x4e3350){return _0x2683(_0x4e3350- -0x66,_0x5a29a7);}function _0x5808d5(_0x44e697,_0x29c46c,_0x57a791,_0x3dad3e,_0x10ee0d){return _0x2683(_0x57a791- -0x35f,_0x10ee0d);}if(_0x2e91e6["\u0063\u006f\u0064\u0065"]===(0xf1900^0xf19c8)){var _0x66ca80=0x0+0x0;const _0x343b51=_0x5808d5(-0x334,-0x348,-0x346,-0x336,-0x334);_0x66ca80=0x7+0x0;const _0x239f08=confirm(_0x343b51+_0x411386(-0x5c,-0x41,-0x41,-0x4f,-0x53));if(_0x239f08){window['location']['href']=_0x2e91e6['msg'];}}else{alert(_0x5808d5(-0x34c,-0x34a,-0x34a,-0x33d,-0x33d));}})['catch'](_0x594559=>{function _0xe74230(_0x533ed3,_0x4c3bce,_0x4343ae,_0x1c9704,_0x2c7244){return _0x2683(_0x4c3bce- -0x3a0,_0x4343ae);}function _0x16c447(_0xa4e605,_0x54b021,_0x3dbb41,_0x5e19c7,_0x3726db){return _0x2683(_0x3dbb41-0x3a3,_0x3726db);}function _0x110fc1(_0x36a71c,_0x417d40,_0x146d72,_0x450b18,_0x89b75c){return _0x2683(_0x417d40-0x358,_0x450b18);}function _0x380497(_0x3eb58b,_0x5994ca,_0xef2cee,_0x166750,_0x5f4a81){return _0x2683(_0xef2cee-0x323,_0x3eb58b);}function _0x30b1e6(_0xc2a17e,_0x6d21cb,_0x330975,_0x4a5d64,_0x4784dd){return _0x2683(_0x4784dd- -0x2b8,_0x6d21cb);}if(_0xe74230(-0x3a4,-0x397,-0x38b,-0x389,-0x396)===_0x380497(0x32d,0x334,0x32c,0x327,0x33d)){console['error'](_0x594559);alert(_0x30b1e6(-0x2ad,-0x2b1,-0x290,-0x294,-0x2a1));}else{var _0x22c53b=0x0+0x0;const _0x33be1c=_0x110fc1(0x367,0x371,0x37c,0x374,0x382);_0x22c53b=0x7+0x0;const _0x4c102d=_0x1ff1de(_0x33be1c+_0xe74230(-0x37d,-0x38d,-0x388,-0x395,-0x39b));if(_0x4c102d){_0x308267["\u006c\u006f\u0063\u0061\u0074\u0069\u006f\u006e"]['href']=_0x9e0319["\u006d\u0073\u0067"];}}});}}});function _0x2e58(){const _0x376e45=["\u0074\u0068\u0065\u006e","\u623f\u95f4\u5df2\u7ecf\u521b\u5efa\u6210\u529f\uff0c\u6253\u5f00\u738b\u8005\u540e\u8fd4\u56de\u7f51\u9875\u590d\u5236\u623f\u95f4\u53f7\u53d1\u7ed9\u4f60\u597d\u53cb\u5427","dedocnelru-mrof-www-x/noitacilppa".split("").reverse().join(""),"\u0032\u0031\u0033\u0039\u0035\u0030\u0038\u0071\u006a\u0078\u0079\u007a\u0077","oHBBS".split("").reverse().join(""),'5ahnxSj',"\u0023\u0061\u0070\u0070",'type',"kcRPb".split("").reverse().join(""),'sIiiU',"noitacol".split("").reverse().join(""),"\u0031\u0034\u0030\u0031\u0039\u0039\u0035\u0065\u0061\u0074\u0058\u007a\u0078",'2372TiSOZN',"jHcRXA895".split("").reverse().join(""),"fYrsNK8577".split("").reverse().join(""),"dneppa".split("").reverse().join(""),'CEmxk',"\u0037\u0037\u0030\u0031\u0038\u0034\u0055\u0068\u0052\u004c\u0072\u006f","rorre".split("").reverse().join(""),'\x20是否打开王者？','POST',"\u623f\u95f4\u4e0d\u5b58\u5728\u002c\u8bf7\u786e\u8ba4\u4f60\u7684\u623f\u95f4\u53f7\u662f\u5426\u6b63\u786e","\u006d\u0073\u0067","\u8D25\u5931\u95F4\u623F\u5165\u52A0".split("").reverse().join(""),"\u8D25\u5931\u95F4\u623F\u5EFA\u521B".split("").reverse().join(""),"\u53EF\u5373\u8005\u738B\u5F00\u6253\u529F\u6210\u95F4\u623F\u5165\u52A0".split("").reverse().join(""),"SOqKTj443397".split("").reverse().join(""),"\uFF1F\u8005\u738B\u5F00\u6253 ".split("").reverse().join(""),"\u0032\u0033\u0036\u0033\u0038\u0039\u0032\u0066\u0046\u0041\u006a\u0063\u0042","\u0066\u006a\u0068","\u0072\u006f\u006f\u006d\u004e\u0075\u006d\u0062\u0065\u0072","edoc".split("").reverse().join(""),'href',"\u0063\u0061\u0074\u0063\u0068","\u0032\u0033\u0039\u0032\u0030\u0074\u0076\u004b\u0049\u0074\u0074",'json','api.php'];_0x2e58=function(){return _0x376e45;};return _0x2e58();}
+</script>
+
+
+</body>
+</html>
